@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>One_Booking</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<h1>Информация о бронировании</h1>
+
+<h2>Дата заезда</h2>
+<div class="author" th:text="${book.getDate_in()}"></div>
+
+<h2>Дата выезда</h2>
+<div class="nameOfBook" th:text="${book.getDate_out()}"></div>
+
+<h2>Фио</h2>
+<div class="genre" th:text="${book.getFull_name()}"></div>
+
+<h2>Имя питомца</h2>
+<div class="genre" th:text="${book.getName()}"></div>
+
+<h2>Тип комнаты</h2>
+<div class="genre" th:text="${book.getType()}"></div>
+<hr>
+<hr>
+<div>
+    <a th:href="@{/booking/{id}/edit(id=${book.getId()})}">Редактировать бронирование</a>
+</div>
+
+<form th:method="DELETE" th:action="@{/booking/{id}(id=${book.getId()})}">
+    <input type="submit" value="Удалить бронирование" class="button">
+</form>
+
+<div>
+    <a th:href="@{/booking}">Назад ко всем бронированиям</a>
+</div>
+</body>
+</html>

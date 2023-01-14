@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All booking</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+<h1>Все бронирования</h1>
+<div th:each="book : ${booking}">
+    <a th:href="@{/booking/{id}(id=${book.getId()})}" th:text="${book.getId()}"></a>
+</div>
+<hr>
+<hr>
+<div>
+    <a th:href="@{/booking/new}">Забронировать еще</a>
+</div>
+</body>
+</html>

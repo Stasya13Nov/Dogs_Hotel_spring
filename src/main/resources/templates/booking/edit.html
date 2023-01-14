@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit the booking</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/booking/{id}(id=${book.getId()})}" th:object="${book}">
+    <div>
+        <label for="date_in">Дата заезда</label>
+        <input type="date" placeholder="дата заезда" th:field="*{date_in}" id = "date_in">
+        <div class="error" th:if="${#fields.hasErrors('date_in')}" th:errors="*{date_in}" ></div>
+    </div>
+
+    <div>
+        <label for="date_out">Дата выезда</label>
+        <input type="date" placeholder="дата выезда" th:field="*{date_out}" id = "date_out">
+        <div class="error" th:if="${#fields.hasErrors('date_out')}" th:errors="*{date_out}" ></div>
+    </div>
+
+    <div>
+        <label for="full_name">Фио</label>
+        <input type="text"placeholder="фио" th:field="*{full_name}" id = "full_name">
+        <div class="error" th:if="${#fields.hasErrors('full_name')}" th:errors="*{full_name}" ></div>
+    </div>
+
+    <div>
+        <label for="name">Имя питомца</label>
+        <input type="text"placeholder="имя" th:field="*{name}" id = "name">
+        <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}" ></div>
+    </div>
+
+    <div>
+        <div>Тип комнаты</div>
+        <input name="dog" checked type="radio" th:field="*{type}" value="standard"> Standard
+        <input name="dog" type="radio" th:field="*{type}" value="suite"> Suite
+        <input name="dog" type="radio" th:field="*{type}" value="vip"> Vip
+    </div>
+
+    <br>
+    <input type="submit" value="Редактировать" class="button">
+</form>
+</body>
+</html>
