@@ -1,4 +1,4 @@
-package model;
+package by.stasya.dogs_hotel_spring.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
@@ -13,8 +13,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "dog")
-public class Dog {
+@Table(name = "client")
+
+public class Client {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,19 +24,33 @@ public class Dog {
     @NotEmpty(message = "Поле обязательно для заполнения!")
     @Size(min = 2, max = 50, message = "Поле должно содержать от 2 до 50 символов")
     @Pattern(regexp = "[A-Za-z\\s]+", message = "Разрешены только латинские буквы")
-    @Column(name = "name")
-    private String name;
+    @Column(name = "full_name")
+    private String full_name;
 
-    @Column(name = "breed")
-    private String breed;
+    @Column(name = "address" )
+    private String address;
 
-    @Column(name = "age")
-    private int age;
+    @Column(name = "phone_number")
+    private String phone_number;
 
-    @ManyToOne
-    @JoinColumn(name = "client_id")
-    private Client client;
+    @Column(name = "login")
+    private String login;
 
-    @OneToMany(mappedBy = "dog")
+    @Column(name = "password")
+    private String password;
+
+    @OneToMany(mappedBy = "client")
     @JsonIgnore
-    private List<Booking> booking;}
+    private List<Dog> dogs;
+
+    @OneToMany(mappedBy = "client")
+    @JsonIgnore
+    private List<Booking> booking;
+
+
+    @OneToMany(mappedBy = "client")
+    @JsonIgnore
+    private List<Rating> ratings;
+
+}
+

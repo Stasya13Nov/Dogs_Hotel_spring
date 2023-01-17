@@ -1,10 +1,10 @@
-package service;
+package by.stasya.dogs_hotel_spring.service;
 
+import by.stasya.dogs_hotel_spring.model.Booking;
+import by.stasya.dogs_hotel_spring.repository.BookingRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import model.Booking;
 import org.springframework.stereotype.Service;
-import repository.BookingRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -71,7 +71,7 @@ public class BookingService {
 
     }
 
-    public List<Booking> findByPrefix(String prefix) {
-        return bookingRepository.findByNameStartingWithIgnoreCase(prefix);
-    }
+//    public List<Booking> findByPrefix(String prefix) {
+//        return bookingRepository.findByNameStartingWithIgnoreCase(prefix);
+//    }
 }

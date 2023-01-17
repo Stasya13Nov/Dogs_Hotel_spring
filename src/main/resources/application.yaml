@@ -8,8 +8,21 @@ spring:
     properties:
       hibernate:
         dialect: 'org.hibernate.dialect.PostgreSQLDialect'
-
+  thymeleaf:
+    cache: false
   mvc:
-    hidden-method:
+    hiddenmethod:
       filter:
-        enabled=true
+        enabled: true
+
+
+
+
+
+
+
+
+
+
+
+

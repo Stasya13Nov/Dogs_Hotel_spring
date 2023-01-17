@@ -42,7 +42,7 @@
 -- );
 
 
---  create table booking_room(
+-- create table booking_room(
 -- booking_id int not null,type
 -- room_id int not null,
 -- primary key(booking_id,room_id),
@@ -61,24 +61,26 @@
 
 -- INSERT INTO client (full_name, address, phone_number, login, password)
 -- VALUES
---     ('novikova a.b.', 'minsk', 2345678, 'stasya', '1313');
---
+--     ('novik a.b.', 'minsk', 2345678, 'nastya', '1313');
+
 -- insert into dog (name, breed, age, client_id)
--- values ('jeki', 'erk', 2, 1);
---
+-- values ('jeki', 'erk', 3, 1);
+
 -- insert into room_info(room_number, description, price, type_id)
 -- values (1, 'норм', 100, 1),
 --        (2, 'средне', 200, 2),
 --        (3, 'хорошо', 300, 3);
 --
 -- insert into room_type(type)
--- values ('standart'),('suite'), ('vip');
+-- values ('standart'),
+-- ('suite'),
+-- ('vip');
 --
 -- insert into booking (reservation_date_time, date_in, date_out, client_id,room_info_id, room_type_id, dog_id)
 -- values ('2023-02-05 20:00:00', '2023-02-11','2023-02-13', 1, 1, 1, 1),
 --        ('2023-02-06 21:00:00', '2023-02-15','2023-02-17', 1, 2, 2, 1);
-
+--
 -- insert into rating (figure, comment, room_id, client_id)
 -- values (5, 'good', 1, 1);
-
-
+--
+--

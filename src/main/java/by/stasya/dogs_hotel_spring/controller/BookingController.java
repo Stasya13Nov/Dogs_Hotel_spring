@@ -1,12 +1,12 @@
-package controller;
+package by.stasya.dogs_hotel_spring.controller;
 
+import by.stasya.dogs_hotel_spring.model.Booking;
 import lombok.AllArgsConstructor;
-import model.Booking;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import service.BookingService;
+import by.stasya.dogs_hotel_spring.service.BookingService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -55,18 +55,14 @@ private final BookingService bookingService;
         return "redirect:/booking";
     }
 
-
-//    @PutMapping("{/id}")
-//    public String update(@ModelAttribute("booking") @Valid Booking booking, BindingResult bindingResult,
-//                         @PathVariable("id") int id) {
-//        if (bindingResult.hasErrors()){
-//            return "booking/edit";
-//        }
-//        bookingService.partialUpdate(id, booking);
-//        return "redirect:/booking";
-//    }
-
-    @PatchMapping("{/id}")
+    //форма для редактирования
+    @GetMapping("/{id}/edit")
+    public String updateForm(@PathVariable("id") int id, Model model) {
+        Booking booking = bookingService.findById(id);
+        model.addAttribute("booking", booking);
+        return "booking/edit";
+    }
+    @PatchMapping("/{id}")
     public String partialUpdate(@ModelAttribute("booking") @Valid Booking booking, BindingResult bindingResult,
                                 @PathVariable("id") int id) {
         if (bindingResult.hasErrors()){
@@ -76,10 +72,10 @@ private final BookingService bookingService;
         return "redirect:/booking";
     }
 
-    @GetMapping("/prefix")
-    public List<Booking> getByPrefix(@RequestParam String prefix) {
-        return bookingService.findByPrefix(prefix);
-    }
+//    @GetMapping("/prefix")
+//    public List<Booking> getByPrefix(@RequestParam String prefix) {
+//        return bookingService.findByPrefix(prefix);
+//    }
 
 
 

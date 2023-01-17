@@ -1,4 +1,4 @@
-package model;
+package by.stasya.dogs_hotel_spring.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
