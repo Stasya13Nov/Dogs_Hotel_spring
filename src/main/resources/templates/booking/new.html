@@ -16,7 +16,37 @@
         <label for="date_out">Дата выезда</label>
         <input type="datetime-local" placeholder="дата выезда" th:field="*{date_out}" id = "date_out">
     </div>
-<!--    Остальное пишем тут-->
+    <div>
+        <label for="full_name">Фио</label>
+        <input type="text"placeholder="фио" th:field="*{full_name}" id = "full_name">
+        <div class="error" th:if="${#fields.hasErrors('full_name')}" th:errors="*{full_name}" ></div>
+    </div>
+
+    <div>
+        <label for="name">Имя питомца</label>
+        <input type="text"placeholder="имя" th:field="*{name}" id = "name">
+        <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}" ></div>
+    </div>
+
+    <div>
+        <label for="breed">Порода</label>
+        <input type="text"placeholder="порода" th:field="*{breed}" id = "breed">
+        <div class="error" th:if="${#fields.hasErrors('breed')}" th:errors="*{breed}" ></div>
+    </div>
+
+    <div>
+        <label for="age">Возраст</label>
+        <input type="text"placeholder="возраст" th:field="*{age}" id = "age">
+        <div class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}" ></div>
+    </div>
+
+    <div>
+        <div>Тип комнаты</div>
+        <input name="dog" checked type="radio" th:field="*{type}" value="standard"> Standard
+        <input name="dog" type="radio" th:field="*{type}" value="suite"> Suite
+        <input name="dog" type="radio" th:field="*{type}" value="vip"> Vip
+    </div>
+
     <input type="submit" value="Submit">
 
 </form>

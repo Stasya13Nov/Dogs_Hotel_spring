@@ -8,7 +8,7 @@
 
 <body>
 <h1>Все бронирования</h1>
-<div th:each="book : ${booking}">
+<div th:each="book : ${bookings}">
     <a th:href="@{/booking/{id}(id=${book.getId()})}" th:text="${book.getId()}"></a>
 </div>
 <hr>

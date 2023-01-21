@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Вы зарегестрировались!</h2>
+    <span>ФИО:</span><span th:text="${user.full_name}"></span><br/>
+    <span>Gender:</span><span th:text="${user.gender}"></span><br/>
+    <span>Телефон:</span><span th:text="${user.gender}"></span><br/>
+    <span>Логин:</span><span th:text="${user.login}"></span><br/>
+    <span>Пароль:</span><span th:text="${user.password}"></span><br/>
+</div>
+</body>
+</html>

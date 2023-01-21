@@ -21,8 +21,8 @@ private final BookingService bookingService;
 
     @GetMapping
     public String getAll(Model model) {
-        List<Booking> booking = bookingService.findAll();
-        model.addAttribute("booking", booking);
+        List<Booking> bookingList = bookingService.findAll();
+        model.addAttribute("bookings", bookingList);
         return "booking/index";
     }
 
@@ -36,9 +36,10 @@ private final BookingService bookingService;
     //форма для бронирования
     @GetMapping("/new")
     public String createForm(@ModelAttribute("booking") Booking booking) {
+
+
         return "booking/new";
     }
-
 
     @PostMapping
     public String create(@ModelAttribute("booking") @Valid Booking booking, BindingResult bindingResult) {
@@ -63,7 +64,7 @@ private final BookingService bookingService;
         return "booking/edit";
     }
     @PatchMapping("/{id}")
-    public String partialUpdate(@ModelAttribute("booking") @Valid Booking booking, BindingResult bindingResult,
+    public String update(@ModelAttribute("booking") @Valid Booking booking, BindingResult bindingResult,
                                 @PathVariable("id") int id) {
         if (bindingResult.hasErrors()){
             return "booking/edit";

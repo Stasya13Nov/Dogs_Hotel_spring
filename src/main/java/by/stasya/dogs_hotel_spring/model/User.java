@@ -13,22 +13,22 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "client")
+@Table(name = "users")
 
-public class Client {
+public class User {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotEmpty(message = "Поле обязательно для заполнения!")
-    @Size(min = 2, max = 50, message = "Поле должно содержать от 2 до 50 символов")
-    @Pattern(regexp = "[A-Za-z\\s]+", message = "Разрешены только латинские буквы")
+//    @NotEmpty(message = "Поле обязательно для заполнения!")
+//    @Size(min = 2, max = 50, message = "Поле должно содержать от 2 до 50 символов")
+//    @Pattern(regexp = "[A-Za-z\\s]+", message = "Разрешены только латинские буквы")
     @Column(name = "full_name")
     private String full_name;
 
-    @Column(name = "address" )
-    private String address;
+    @Column(name = "gender" )
+    private String gender;
 
     @Column(name = "phone_number")
     private String phone_number;
@@ -39,16 +39,16 @@ public class Client {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "user")
     @JsonIgnore
     private List<Dog> dogs;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "user")
     @JsonIgnore
     private List<Booking> booking;
 
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "user")
     @JsonIgnore
     private List<Rating> ratings;
 

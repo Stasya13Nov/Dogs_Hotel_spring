@@ -1,4 +1,4 @@
 package by.stasya.dogs_hotel_spring.service;
 
-public class ClientService {
+public class UserService {
 }
