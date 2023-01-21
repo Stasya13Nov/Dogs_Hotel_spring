@@ -2,6 +2,7 @@ package by.stasya.dogs_hotel_spring.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -18,12 +19,15 @@ public class Booking {
     private int id;
 
     @Column(name = "reservation_date_time")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private Date reservation_date_time;
 
     @Column(name = "date_in")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private Date date_in;
 
     @Column(name = "date_out")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private Date date_out;
 
     @ManyToOne
