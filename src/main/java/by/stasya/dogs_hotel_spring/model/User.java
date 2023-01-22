@@ -41,10 +41,6 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     @JsonIgnore
-    private List<Dog> dogs;
-
-    @OneToMany(mappedBy = "user")
-    @JsonIgnore
     private List<Booking> booking;
 
 

@@ -21,8 +21,4 @@ public class Rating {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "room_id")
-    private Room_info room_info;
 }
