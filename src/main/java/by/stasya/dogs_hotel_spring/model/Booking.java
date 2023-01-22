@@ -31,10 +31,6 @@ public class Booking {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "dog_id")
-    private Dog dog;
-
-    @ManyToOne
-    @JoinColumn(name = "room_type_id")
-    private Room_type room_type;
+    @JoinColumn(name = "room_id")
+    private Room room;
 }
